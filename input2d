@@ -1,5 +1,5 @@
 // physical parameters
-L = 0.30                                   // length of the computational (fluid) domain (m)
+L = 0.60                                   // length of the computational (fluid) domain (m)
 RHO = 1.177   //fluid mass density (kg/m^3)
 MU = 0.00001846                             // fluid dynamic viscosity (N s / m^2)
 V = 1.0 //
@@ -7,7 +7,7 @@ V = 1.0 //
 // grid spacing parameters
 MAX_LEVELS = 4                            // maximum number of levels in locally refined grid
 REF_RATIO  = 4                            // refinement ratio between levels
-N = 8                                     // actual    number of grid cells on coarsest grid level
+N = 16                                     // actual    number of grid cells on coarsest grid level
 NFINEST = (REF_RATIO^(MAX_LEVELS - 1))*N  // effective number of grid cells on finest   grid level
 DX = (1.0*L)/NFINEST                      // Cartesian mesh width (m)
 //
@@ -89,8 +89,8 @@ PenaltyIBMethod { //
                 //
 IBStandardInitializer {                //
    max_levels = MAX_LEVELS                //
-   structure_names = "spider2d_512"                //
-   spider2d_512 {                //
+   structure_names = "spider2d_1024"                //
+   spider2d_1024 {                //
       level_number = MAX_LEVELS - 1                //
    } //
 } //
